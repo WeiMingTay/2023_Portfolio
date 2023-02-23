@@ -1,0 +1,317 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* font-family: 'Roboto', sans-serif; */
+/* Allgemein */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Klammern über Hover */
+.codingKlammern::before,
+.codingKlammern::after {
+  transition: all 150ms ease-in;
+  visibility: hidden;
+  color: transparent;
+}
+
+.codingKlammern::before {
+  content: "< ";
+}
+
+.codingKlammern::after {
+  content: " />";
+}
+
+/* .codingKlammern:hover::before,
+.codingKlammern:hover::after {
+	visibility: visible;
+	color: $secondaryColour;
+} */
+/* .codingKlammern:hover::after {
+	content: " /> ";
+	color: $secondaryColour;
+} */
+/* Pulsating Animation*/
+.pulsating {
+  animation-name: pulsating;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulsating {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: #000;
+  }
+  100% {
+    color: transparent;
+  }
+}
+/* Neon Hover */
+.neon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #87ceeb;
+  display: inline-block;
+  border: 0.25rem solid #87ceeb;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  text-shadow: 0 0 0.25em hsla(0deg, 0%, 100%, 0.3), 0 0 0.5em currentColor;
+  box-shadow: 0 0 0.75em 0 #87ceeb, inset 0 0 0.5em 0 #87ceeb;
+  position: relative;
+  transition: background-color 250ms linear;
+}
+.neon::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background-color: #87ceeb;
+  top: 150%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1.5em) rotateX(40deg) scale(1, 0.5);
+  filter: blur(10em);
+  opacity: 0.5;
+}
+.neon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #87ceeb;
+  z-index: -1;
+  box-shadow: 0 0 2rem 0.5rem #87ceeb;
+  opacity: 0;
+}
+.neon:hover {
+  background-color: #87ceeb;
+  color: #333333;
+  text-shadow: none;
+}
+.neon:hover::before, .neon:focus::before, .neon:hover::after, .neon:hover::after {
+  opacity: 1;
+}
+
+/* Header */
+header {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #2c3e50;
+}
+header nav {
+  height: 10%;
+  width: 100%;
+  background-color: #87ceeb;
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  box-shadow: 0 0 10px 1px #87ceeb;
+}
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+header nav ul li {
+  list-style: none;
+  font-size: 2rem;
+}
+header #hero {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header #hero h1 {
+  font-size: 3rem;
+}
+header #hero h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Projekte */
+.projekte {
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1.5rem 3rem;
+}
+.projekte .projekt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333333;
+  color: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  min-width: 200px;
+  max-height: 250px;
+}
+.projekte .projekt .imgContainer {
+  overflow: hidden;
+  /* aspect-ratio: 1.25/1; */
+  display: flex;
+  align-items: center;
+  border: 0.5rem solid #333333;
+  /*    &:hover {
+               overflow: visible;
+               z-index: 1;
+           } */
+}
+.projekte .projekt .imgContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projekte .projekt h2 {
+  margin: 1rem auto;
+}
+.projekte .projekt:hover .codingKlammern::before, .projekte .projekt:hover .codingKlammern::after {
+  visibility: visible;
+  color: #87ceeb;
+}
+.projekte .lastProjekt {
+  grid-column: 1/-1;
+  aspect-ratio: unset;
+}
+
+/* Referenzen */
+/* Footer */
+footer {
+  background-color: #333333;
+  color: #fff;
+  height: calc(100svh - 10vh);
+  width: 100%;
+  display: grid;
+  grid-template-rows: 2.5fr 1fr;
+}
+footer #abschluss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #87ceeb;
+}
+footer #abschluss a {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+footer #kontakt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer #kontakt article {
+  padding: 1rem 3rem;
+  position: relative;
+}
+footer #kontakt article h4 {
+  font-size: 3rem;
+  rotate: -90deg;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%);
+  text-align: start;
+}
+footer #kontakt article div {
+  width: 80%;
+}
+footer #kontakt article div p {
+  display: flex;
+  justify-content: space-between;
+}
+footer #kontakt article:first-of-type div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+footer #kontakt article:first-of-type div p:last-of-type {
+  margin-top: auto;
+}
+
+/* Hover */
+#hover {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 1rem 5rem;
+  width: calc(100% - 2rem);
+}
+#hover:hover > .card > .cardBorder {
+  opacity: 1;
+}
+#hover .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  position: relative;
+  font-size: 4rem;
+}
+#hover .card:hover::before, #hover .card:hover > .cardBorder {
+  opacity: 1;
+}
+#hover .card::before,
+#hover .card > .cardBorder {
+  border-radius: inherit;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+#hover .card::before {
+  background-color: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  z-index: 3;
+}
+#hover .card > .cardBorder {
+  background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.3), transparent 40%);
+  z-index: 1;
+}
+#hover .card > .cardContent {
+  background-color: #020202;
+  opacity: 0.65;
+  border-radius: inherit;
+  height: calc(100% - 3px);
+  width: calc(100% - 3px);
+  margin: 1px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

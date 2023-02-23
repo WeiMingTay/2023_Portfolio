@@ -1,0 +1,70 @@
+/* scroll-snap-type
+scroll-snap-align */
+
+/* ==========
+ALLGEMEIN
+========== */
+/* ----- fonts ----- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Wallpoet&family=Zen+Dots&display=swap');
+
+/* 
+font-family: 'Orbitron', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Silkscreen', cursive;
+font-family: 'Wallpoet', cursive;
+font-family: 'Zen Dots', cursive;
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 3rem;
+    background-color: darkslategray;
+}
+main {
+    background-color: #fff;
+    padding: 5rem;
+}
+
+/* ==========
+Projekt 001 Uhrzeit
+========== */
+section {
+    display: flex;
+    justify-content: center;
+}
+#uhrzeit {
+    width: 100%;
+    border: 50px solid #262F36;
+    border-radius: 15px;
+    background-color: #89A880;
+    /* font-family: 'Orbitron', sans-serif; */
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-family: 'Silkscreen', cursive; */
+    font-family: 'Wallpoet', cursive;
+    /* font-family: 'Zen Dots', cursive; */
+    display: inline-block;
+    padding: 1rem;
+    padding-bottom: .5rem;
+    min-width: 1075px;
+    max-width: 1200px;
+    text-align: center;
+}
+#uhrzeit div {
+    border-bottom: 3px solid #262F36;
+    text-align: start;
+}
+.zifferGross {
+    font-size: 14rem;
+}
+.zifferMittel {
+    margin-left: 2rem;
+    font-size: 3rem;
+    }
+.zifferKlein {
+    font-size: 4rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

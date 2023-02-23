@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WeiMingTay Uhrzeit</title>
+		<link rel="stylesheet" href="../css/uhrzeit.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+            <form action="">
+                <fieldset>
+                    <legend>Wähle einen Uhrtyp aus</legend>
+
+                    <label for="green">Grün</label>
+                    <input type="radio" name="uhrTyp" id="green">
+                    <input type="radio" name="uhrTyp">
+                    <input type="radio" name="uhrTyp">
+                    <input type="radio" name="uhrTyp">
+                    <input type="radio" name="uhrTyp">
+                </fieldset>
+            </form>
+			<section>
+				<div id="uhrzeit">
+					<span class="zifferGross stdMin"></span>
+					<span class="zifferMittel sek"></span>
+					<br />
+					<span class="zifferKlein wochentag"></span>
+					<br />
+					<span class="zifferKlein datum"></span>
+				</div>
+			</section>
+		</main>
+		<script src="../js/uhrzeit.js"></script>
+	</body>
+</html>
