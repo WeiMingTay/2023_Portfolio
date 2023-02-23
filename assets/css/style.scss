@@ -198,7 +198,7 @@ justify-content: space-between;
 
 		.imgContainer {
 			overflow: hidden;
-			/* aspect-ratio: 1.25/1; */
+			/* aspect-ratio: auto 1.25/1; */
 			display: flex;
 			align-items: center;
 			border: 0.5rem solid $bgColour1;
@@ -224,7 +224,7 @@ justify-content: space-between;
 	}
 	.lastProjekt {
 		grid-column: 1 / -1;
-		aspect-ratio: unset;
+		height: 200px;
 	}
 }
 
