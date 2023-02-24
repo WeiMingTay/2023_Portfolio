@@ -19,7 +19,7 @@
 					<!-- <li><a href="#">Uhrzeit</a></li> -->
 					<li><a href="#hero">Über Mich</a></li>
 					<li><a href="#projekte">Projekte</a></li>
-					<li><a href="#referenzen">Referenz</a></li>
+					<!-- <li><a href="#referenzen">Referenz</a></li> -->
 					<li><a href="#kontakt">Kontakt</a></li>
 				</ul>
 			</nav>
@@ -37,17 +37,33 @@
 		<main>
 			<!-- Übersicht der Projekte -->
 			<section class="projekte" id="projekte">
-				<a
-					href="https://weimingtay.github.io/20221018_calculator/"
-					target="_blank"
-					class="projekt"
-				>
+				<div>
+					<h2>Projekte</h2>
+					<p>
+						Hier ist eine Übersicht der kleinen und größeren Projekte, die ich
+						in den letzten Monaten umgesetzt habe. Sowohl "single-page"
+						Programme, als auch ganze Webseiten mit HTML, CSS & JS oder mitHilfe
+						von React.
+					</p>
+				</div>
+				<div class="projekt">
+					<a
+						href="https://weimingtay.github.io/20221018_calculator/"
+						target="_blank"
+						
+					></a>
 					<div class="imgContainer">
 						<img src="assets/img/projekt001_calculator.png" alt="Calculator" />
 					</div>
-					<h2 class="codingKlammern">Taschenrechner</h2>
-					<!-- <a href="#"><i class="lab la-github"></i></a> -->
-				</a>
+					<div>
+						<h4 class="codingKlammern">Taschenrechner</h4>
+						<h4 class="codingKlammern">
+							<a href="https://github.com/WeiMingTay/20221018_calculator.git" target="_blank"><code>Code</code></a>
+						</h4>
+						<!-- <a href="#">
+							<i class="lab la-github"></i></a> -->
+					</div>
+				</div>
 				<a
 					href="https://weimingtay.github.io/20220723_Illustration/"
 					target="_blank"
@@ -80,7 +96,7 @@
 					<div class="imgContainer">
 						<img src="assets/img/projekt999_github.png" alt="Github" />
 					</div>
-					<h2 class="codingKlammern">Gesammelte Werke</h2>
+					<h4 class="codingKlammern">Gesammelte Werke</h4>
 				</a>
 			</section>
 			<section class="referenzen" id="referenzen"></section>
@@ -153,6 +169,7 @@
 					<div class="cardBorder"></div>
 				</a>
 			</section>
+			<a href="#" id="topArrow"><i class="las la-chevron-up"></i></a>
 		</footer>
 		<script src="assets/js/script.js"></script>
 	</body>

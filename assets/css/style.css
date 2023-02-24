@@ -22,30 +22,24 @@ a {
 }
 
 /* Klammern über Hover */
-.codingKlammern::before,
-.codingKlammern::after {
+.codingKlammern {
+  cursor: pointer;
+}
+.codingKlammern:hover::after, .codingKlammern:hover::before, .codingKlammern:hover {
+  text-shadow: 0 0 6px #87ceeb;
+}
+.codingKlammern::before, .codingKlammern::after {
   transition: all 150ms ease-in;
   visibility: hidden;
   color: transparent;
 }
-
 .codingKlammern::before {
   content: "< ";
 }
-
 .codingKlammern::after {
   content: " />";
 }
 
-/* .codingKlammern:hover::before,
-.codingKlammern:hover::after {
-	visibility: visible;
-	color: $secondaryColour;
-} */
-/* .codingKlammern:hover::after {
-	content: " /> ";
-	color: $secondaryColour;
-} */
 /* Pulsating Animation*/
 .pulsating {
   animation-name: pulsating;
@@ -133,12 +127,32 @@ header nav {
 header nav ul {
   display: flex;
   justify-content: flex-end;
-  gap: 2rem;
+  gap: 3rem;
   margin: 0 2rem;
 }
 header nav ul li {
   list-style: none;
   font-size: 2rem;
+}
+header nav ul a {
+  transition: all 2500ms;
+  position: relative;
+}
+header nav ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scalex(0);
+  transform-origin: right;
+  transition: transform 400ms ease-in;
+}
+header nav ul a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 header #hero {
   height: 90%;
@@ -176,6 +190,15 @@ header #hero h3 {
   position: relative;
   min-width: 200px;
   max-height: 250px;
+  cursor: default;
+  position: relative;
+}
+.projekte .projekt > a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .projekte .projekt .imgContainer {
   overflow: hidden;
@@ -194,8 +217,18 @@ header #hero h3 {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.projekte .projekt h2 {
+.projekte .projekt div:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.projekte .projekt h4 {
   margin: 1rem auto;
+  font-size: 1.5rem;
+}
+.projekte .projekt h4:last-of-type {
+  z-index: 1;
 }
 .projekte .projekt:hover .codingKlammern::before, .projekte .projekt:hover .codingKlammern::after {
   visibility: visible;
@@ -204,6 +237,9 @@ header #hero h3 {
 .projekte .lastProjekt {
   grid-column: 1/-1;
   height: 200px;
+}
+.projekte > div:first-of-type {
+  grid-column: 1/-1;
 }
 
 /* Referenzen */
@@ -257,6 +293,19 @@ footer #kontakt article:first-of-type div {
 }
 footer #kontakt article:first-of-type div p:last-of-type {
   margin-top: auto;
+}
+
+/* Zurück nach oben Pfeil */
+#topArrow {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  background-color: rgba(51, 51, 51, 0.75);
+  border-radius: 15%;
+  font-size: 2rem;
+  padding: 1rem;
+  aspect-ratio: 1/1;
 }
 
 /* Hover */

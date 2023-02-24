@@ -34,28 +34,28 @@ a {
 }
 
 /* Klammern über Hover */
-.codingKlammern::before,
-.codingKlammern::after {
-	transition: all 150ms ease-in;
-	visibility: hidden;
-	color: transparent;
-}
-.codingKlammern::before {
-	content: "< ";
-}
+.codingKlammern {
+	cursor: pointer;
 
-.codingKlammern::after {
-	content: " />";
+	&:hover::after,
+	&:hover::before,
+	&:hover {
+		text-shadow: 0 0 6px $secondaryColour;
+	}
+	&::before,
+	&::after {
+		transition: all 150ms ease-in;
+		visibility: hidden;
+		color: transparent;
+	}
+	&::before {
+		content: "< ";
+	}
+
+	&::after {
+		content: " />";
+	}
 }
-/* .codingKlammern:hover::before,
-.codingKlammern:hover::after {
-	visibility: visible;
-	color: $secondaryColour;
-} */
-/* .codingKlammern:hover::after {
-	content: " /> ";
-	color: $secondaryColour;
-} */
 
 /* Pulsating Animation*/
 .pulsating {
@@ -147,12 +147,35 @@ header {
 		ul {
 			display: flex;
 			justify-content: flex-end;
-			gap: 2rem;
+			gap: 3rem;
 			margin: 0 2rem;
 
 			li {
 				list-style: none;
 				font-size: 2rem;
+			}
+			a {
+				transition: all 2500ms;
+				position: relative;
+
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 2px;
+					background-color: $textColorDark;
+					transform: scalex(0);
+					transform-origin: right;
+					transition: transform 400ms ease-in;
+				}
+
+				&:hover::after {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
 			}
 		}
 	}
@@ -187,7 +210,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-justify-content: space-between;
+		justify-content: space-between;
 		background-color: $bgColour1;
 		color: $textColorLight;
 		border-radius: 0.25rem;
@@ -195,6 +218,16 @@ justify-content: space-between;
 		position: relative;
 		min-width: 200px;
 		max-height: 250px;
+		cursor: default;
+		position: relative;
+
+		> a {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
 
 		.imgContainer {
 			overflow: hidden;
@@ -213,8 +246,20 @@ justify-content: space-between;
                 z-index: 1;
             } */
 		}
-		h2 {
+		div:last-of-type {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			gap: 2rem;
+		}
+		h4 {
 			margin: 1rem auto;
+			font-size: 1.5rem;
+
+			&:last-of-type {
+				z-index: 1;
+			}
+			
 		}
 		&:hover .codingKlammern::before,
 		&:hover .codingKlammern::after {
@@ -225,6 +270,9 @@ justify-content: space-between;
 	.lastProjekt {
 		grid-column: 1 / -1;
 		height: 200px;
+	}
+	> div:first-of-type {
+		grid-column: 1/-1;
 	}
 }
 
@@ -285,6 +333,18 @@ footer {
 			}
 		}
 	}
+}
+/* Zurück nach oben Pfeil */
+#topArrow {
+	position: fixed;
+	left: 1rem;
+	bottom: 1rem;
+	z-index: 3;
+	background-color: rgba($bgColourDark, 0.75);
+	border-radius: 15%;
+	font-size: 2rem;
+	padding: 1rem;
+	aspect-ratio: 1/1;
 }
 // Kontakt
 /* Hover */
@@ -349,7 +409,7 @@ footer {
 			width: calc(100% - 3px);
 			margin: 1px;
 			position: relative;
-			z-index: 2;
+z-index: 2;
 			display: flex;
 			justify-content: center;
 			align-items: center;
