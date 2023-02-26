@@ -376,7 +376,7 @@ footer {
 			text-transform: uppercase;
 		}
 	}
-	#kontakt {
+	/* #kontakt {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		article {
@@ -410,7 +410,7 @@ footer {
 				}
 			}
 		}
-	}
+	} */
 }
 /* Zurück nach oben Pfeil */
 #topArrow {
@@ -427,11 +427,12 @@ footer {
 // Kontakt
 /* Hover */
 #hover {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
+	/* grid-template-columns: repeat(4, 1fr); */
 	gap: 0.5rem;
-	padding: 1rem 5rem;
+	padding: 1rem 15rem;
 	width: calc(100% - 2rem);
+	justify-content: center;
 
 	&:hover > .card > .cardBorder {
 		opacity: 1;
@@ -443,7 +444,8 @@ footer {
 		background-color: rgba($hoverColour1, 0.1);
 		border-radius: 1rem;
 		position: relative;
-
+		aspect-ratio: 1/1;
+		width: 150px;
 		font-size: 4rem;
 
 		&:hover::before,
