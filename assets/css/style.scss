@@ -141,8 +141,8 @@ header {
 		top: 0;
 		align-items: center;
 		justify-content: space-between;
-		z-index: 1;
-		box-shadow: 0 0 10px 1px $secondaryColour;
+		z-index: 2;
+		/* box-shadow: 0 0 10px 1px $secondaryColour; */
 
 		ul {
 			display: flex;
@@ -157,7 +157,6 @@ header {
 			a {
 				transition: all 2500ms;
 				position: relative;
-
 
 				&::after {
 					content: "";
@@ -187,9 +186,31 @@ header {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 
 		h1 {
 			font-size: 3rem;
+			span {
+				cursor: pointer;
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 10%;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background-color: $textColorDark;
+					transform: scalex(1);
+					transform-origin: left;
+					transition: transform 400ms ease-in;
+				}
+
+				&:hover::after {
+					transform: scaleX(0);
+					transform-origin: left;
+				}
+			}
 		}
 		h3 {
 			font-size: 2rem;
@@ -197,12 +218,53 @@ header {
 		}
 	}
 }
+#whoAmI {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	background-color: $primaryColour;
+	/* border: 1px solid $secondaryColour; */
+	padding: 2rem;
+	border-radius: 0.25rem;
+	box-shadow: 0 0 10px 0px $secondaryColour;
+	display: none;
+
+	> div {
+		display: flex;
+		img {
+			width: 200px;
+			border: 0.75rem solid $bgColourLight;
+		}
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			min-width: 250px;
+			max-width: 350px;
+			padding: 0 1rem;
+			color: $textColorLight;
+			font-size: 1.5rem;
+
+			h3 {
+				font-size: 3rem;
+			}
+			div {
+				margin-top: auto;
+				p {
+					margin-top: 0.5rem;
+				}
+			}
+		}
+	}
+}
 
 /* Projekte */
 .projekte {
+	$projekteBorderRadius: 2rem;
 	display: grid;
-	/* grid-auto-flow: column; */
-	grid-template-columns: repeat(3, 1fr);
+	grid-auto-flow: column;
+	/* grid-template-columns: repeat(3, 1fr); */
 
 	gap: 2rem;
 	padding: 1.5rem 3rem;
@@ -213,13 +275,13 @@ header {
 		justify-content: space-between;
 		background-color: $bgColour1;
 		color: $textColorLight;
-		border-radius: 0.25rem;
+		border-radius: $projekteBorderRadius;
 		overflow: hidden;
 		position: relative;
-		min-width: 200px;
+		min-width: 150px;
+		max-width: 265px;
 		max-height: 250px;
 		cursor: default;
-		position: relative;
 
 		> a {
 			position: absolute;
@@ -227,18 +289,26 @@ header {
 			bottom: 0;
 			left: 0;
 			right: 0;
+			cursor: default;
 		}
 
 		.imgContainer {
 			overflow: hidden;
-			/* aspect-ratio: auto 1.25/1; */
+			aspect-ratio: auto 1.25/1;
 			display: flex;
 			align-items: center;
 			border: 0.5rem solid $bgColour1;
+			border-radius: $projekteBorderRadius $projekteBorderRadius 0 0;
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				transition: all 250ms;
+
+				&:hover {
+					scale: 1.05;
+					rotate: -2deg;
+				}
 			}
 
 			/*    &:hover {
@@ -250,16 +320,19 @@ header {
 			display: flex;
 			align-items: center;
 			justify-content: space-evenly;
-			gap: 2rem;
+			gap: 0.5rem 1.5rem;
+			line-height: 0.5rem;
+			flex-wrap: wrap;
+			padding-bottom: 1rem;
 		}
-		h4 {
+		a {
 			margin: 1rem auto;
 			font-size: 1.5rem;
+			z-index: 1;
 
 			&:last-of-type {
 				z-index: 1;
 			}
-			
 		}
 		&:hover .codingKlammern::before,
 		&:hover .codingKlammern::after {
@@ -267,12 +340,16 @@ header {
 			color: $secondaryColour;
 		}
 	}
+}
+#githubProjekt {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	gap: 2rem;
+	padding: 1.5rem 3rem;
 	.lastProjekt {
 		grid-column: 1 / -1;
 		height: 200px;
-	}
-	> div:first-of-type {
-		grid-column: 1/-1;
 	}
 }
 
@@ -286,12 +363,13 @@ footer {
 	width: 100%;
 	display: grid;
 	grid-template-rows: 2.5fr 1fr;
+	padding-bottom: 4rem;
 
 	#abschluss {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-bottom: 3px solid $secondaryColour;
+		/* border-bottom: 3px solid $secondaryColour; */
 
 		a {
 			font-size: 2.5rem;
@@ -409,7 +487,7 @@ footer {
 			width: calc(100% - 3px);
 			margin: 1px;
 			position: relative;
-z-index: 2;
+			z-index: 2;
 			display: flex;
 			justify-content: center;
 			align-items: center;

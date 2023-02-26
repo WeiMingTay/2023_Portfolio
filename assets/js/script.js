@@ -10,3 +10,15 @@ document.getElementById("hover").onmousemove = (e) => {
 		card.style.setProperty("--mouse-y", `${y}px`);
 	}
 };
+
+/* Wer bin ich */
+
+const weiMing = document.getElementById("weiMing");
+const whoAmI = document.getElementById("whoAmI");
+
+weiMing.addEventListener("click", () => {
+	whoAmI.style.display="block"
+})
+whoAmI.addEventListener("click", () => {
+	whoAmI.style.display="none"
+})

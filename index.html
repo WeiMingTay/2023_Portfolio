@@ -26,17 +26,34 @@
 			<div id="hero">
 				<h1>
 					Moin, ich bin
-					<span>Wei Ming</span>
+					<span id="weiMing">Wei Ming</span>
 				</h1>
 				<h3>
 					<span class="pulsating"><</span> Webentwickler
 					<span class="pulsating"> /></span>
 				</h3>
+				<div id="whoAmI">
+					<div>
+						<img src="assets/img/WeiMingTAY.jpg" alt="Wei Ming Profil" />
+						<div>
+							<h3>Wei Ming Tay</h3>
+							<date>23.04.1984</date>
+							<p>Wohnsitz in Hamburg-Altona</p>
+							<div>
+								<p>
+									Frischer Front-End-Entwickler mit viel Motivation und dem
+									zusätzlichen Blick für Ästhetik =)
+								</p>
+								<p>Neben einem siebenmonatigen Bootcamp, bilde ich mich ständig Mithilfe von Videos und anderen Seiten weiter.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
 		<main>
 			<!-- Übersicht der Projekte -->
-			<section class="projekte" id="projekte">
+			<section class="projekteContainer" id="projekte">
 				<div>
 					<h2>Projekte</h2>
 					<p>
@@ -46,58 +63,95 @@
 						von React.
 					</p>
 				</div>
-				<div class="projekt">
-					<a
-						href="https://weimingtay.github.io/20221018_calculator/"
-						target="_blank"
-						
-					></a>
-					<div class="imgContainer">
-						<img src="assets/img/projekt001_calculator.png" alt="Calculator" />
+				<div class="projekte">
+					<div class="projekt">
+						<a
+							href="https://weimingtay.github.io/20221018_calculator/"
+							target="_blank"
+						></a>
+						<div class="imgContainer">
+							<img
+								src="assets/img/projekt001_calculator.png"
+								alt="Calculator"
+							/>
+						</div>
+						<div>
+							<a
+								href="https://weimingtay.github.io/20221018_calculator/"
+								target="_blank"
+								class="codingKlammern"
+								>Taschenrechner
+							</a>
+							<a
+								href="https://github.com/WeiMingTay/20221018_calculator.git"
+								target="_blank"
+								class="codingKlammern"
+								>Code</a
+							>
+						</div>
 					</div>
-					<div>
-						<h4 class="codingKlammern">Taschenrechner</h4>
-						<h4 class="codingKlammern">
-							<a href="https://github.com/WeiMingTay/20221018_calculator.git" target="_blank"><code>Code</code></a>
-						</h4>
-						<!-- <a href="#">
-							<i class="lab la-github"></i></a> -->
+					<div class="projekt">
+						<a
+							href="https://weimingtay.github.io/20220723_Illustration/"
+							target="_blank"
+						></a>
+						<div class="imgContainer">
+							<img
+								src="assets/img/projekt003_illustration.png"
+								alt="Illustration Page"
+							/>
+						</div>
+						<div>
+							<a
+								href="https://weimingtay.github.io/20220723_Illustration/"
+								target="_blank"
+								class="codingKlammern"
+								>Illustration Page
+							</a>
+							<a
+								href="https://github.com/WeiMingTay/20220723_Illustration.git"
+								target="_blank"
+								class="codingKlammern"
+								>Code</a
+							>
+						</div>
+					</div>
+					<div class="projekt">
+						<a
+							href="https://weimingtay.github.io/20221029_lev3_5_morseCode/"
+							target="_blank"
+						></a>
+						<div class="imgContainer">
+							<img src="assets/img/projekt005_morseCode.png" alt="Morse Code" />
+						</div>
+						<div>
+							<a
+								href="https://weimingtay.github.io/20221029_lev3_5_morseCode/"
+								target="_blank"
+								class="codingKlammern"
+								>Morse Code
+							</a>
+							<a
+								href="https://github.com/WeiMingTay/20221029_lev3_5_morseCode.git"
+								target="_blank"
+								class="codingKlammern"
+								>Code</a
+							>
+						</div>
 					</div>
 				</div>
-				<a
-					href="https://weimingtay.github.io/20220723_Illustration/"
-					target="_blank"
-					class="projekt"
-				>
-					<div class="imgContainer">
-						<img
-							src="assets/img/projekt003_illustration.png"
-							alt="Illustration Page"
-						/>
-					</div>
-					<h2 class="codingKlammern">Illustration Page</h2>
-					<!-- <a class="githubLink" href="#"><i class="lab la-github"></i></a> -->
-				</a>
-				<a
-					href="https://weimingtay.github.io/20221029_lev3_5_morseCode/"
-					target="_blank"
-					class="projekt"
-				>
-					<div class="imgContainer">
-						<img src="assets/img/projekt005_morseCode.png" alt="Morse Code" />
-					</div>
-					<h2 class="codingKlammern">Morse Code Generator</h2>
-				</a>
+				<!-- <div id=githubProjekt">
 				<a
 					href="https://github.com/WeiMingTay"
 					target="_blank"
 					class="projekt lastProjekt"
-				>
+				></a>
 					<div class="imgContainer">
 						<img src="assets/img/projekt999_github.png" alt="Github" />
 					</div>
 					<h4 class="codingKlammern">Gesammelte Werke</h4>
-				</a>
+				
+			</div> -->
 			</section>
 			<section class="referenzen" id="referenzen"></section>
 		</main>
