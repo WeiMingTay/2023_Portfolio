@@ -179,6 +179,7 @@ header #hero {
 }
 header #hero h1 {
   font-size: 3rem;
+  color: #fff;
 }
 header #hero h1 span {
   cursor: pointer;
@@ -191,7 +192,7 @@ header #hero h1 span::after {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #000;
+  background-color: #fff;
   transform: scalex(1);
   transform-origin: left;
   transition: transform 400ms ease-in;
