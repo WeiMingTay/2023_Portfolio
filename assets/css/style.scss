@@ -206,6 +206,7 @@ header {
 
 		h1 {
 			font-size: 3rem;
+			color: $textColorLight;
 			span {
 				cursor: pointer;
 				position: relative;
@@ -216,7 +217,7 @@ header {
 					left: 0;
 					width: 100%;
 					height: 1px;
-					background-color: $textColorDark;
+					background-color: $textColorLight;
 					transform: scalex(1);
 					transform-origin: left;
 					transition: transform 400ms ease-in;
