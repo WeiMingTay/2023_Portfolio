@@ -69,7 +69,7 @@ a {
   border: 0.25rem solid #87ceeb;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
-  text-shadow: 0 0 0.25em hsla(0deg, 0%, 100%, 0.3), 0 0 0.5em currentColor;
+  text-shadow: 0 0 0.25em hsla(0, 0%, 100%, 0.3), 0 0 0.5em currentColor;
   box-shadow: 0 0 0.75em 0 #87ceeb, inset 0 0 0.5em 0 #87ceeb;
   position: relative;
   transition: background-color 250ms linear;
@@ -254,11 +254,15 @@ header #hero h3 {
 
 /* Projekte */
 .projekte {
-  display: grid;
-  grid-auto-flow: column;
+  /* display: grid;
+  grid-auto-flow: column; */
   /* grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   padding: 1.5rem 3rem;
+  transition: all 250ms;
 }
 .projekte .projekt {
   display: flex;
@@ -301,10 +305,11 @@ header #hero h3 {
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 250ms;
+  z-index: 1;
 }
 .projekte .projekt .imgContainer img:hover {
   scale: 1.05;
-  rotate: -2deg;
+  rotate: 1deg;
 }
 .projekte .projekt div:last-of-type {
   display: flex;
@@ -327,16 +332,11 @@ header #hero h3 {
   visibility: visible;
   color: #87ceeb;
 }
-
-#githubProjekt {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 1.5rem 3rem;
+.projekte .projektGithub {
+  min-width: 100%;
 }
-#githubProjekt .lastProjekt {
-  grid-column: 1/-1;
-  height: 200px;
+.projekte .projektGithub .imgContainer {
+  aspect-ratio: auto;
 }
 
 /* Referenzen */

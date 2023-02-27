@@ -287,12 +287,17 @@ header {
 /* Projekte */
 .projekte {
 	$projekteBorderRadius: 2rem;
-	display: grid;
-	grid-auto-flow: column;
+	/* display: grid;
+	grid-auto-flow: column; */
 	/* grid-template-columns: repeat(3, 1fr); */
 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 2rem;
 	padding: 1.5rem 3rem;
+	transition: all 250ms;
+
 	.projekt {
 		display: flex;
 		flex-direction: column;
@@ -329,10 +334,11 @@ header {
 				height: 100%;
 				object-fit: cover;
 				transition: all 250ms;
+				z-index: 1;
 
 				&:hover {
 					scale: 1.05;
-					rotate: -2deg;
+					rotate: 1deg;
 				}
 			}
 
@@ -365,16 +371,11 @@ header {
 			color: $secondaryColour;
 		}
 	}
-}
-#githubProjekt {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-
-	gap: 2rem;
-	padding: 1.5rem 3rem;
-	.lastProjekt {
-		grid-column: 1 / -1;
-		height: 200px;
+	.projektGithub {
+		min-width: 100%;
+		.imgContainer {
+			aspect-ratio: auto;
+		}
 	}
 }
 
