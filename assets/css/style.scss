@@ -148,7 +148,7 @@ header {
 	}
 
 	nav {
-		height: 10%;
+		/* height: 10%; */
 		width: 100%;
 		background-color: $secondaryColour;
 		display: flex;
@@ -159,7 +159,9 @@ header {
 		z-index: 2;
 		padding: 0 2rem;
 		/* box-shadow: 0 0 10px 1px $secondaryColour; */
-
+		> a {
+			margin: 1rem 0;
+		}
 		ul {
 			display: flex;
 			justify-content: flex-end;
@@ -389,7 +391,7 @@ footer {
 	height: calc(100svh - 10vh);
 	width: 100%;
 	display: grid;
-	grid-template-rows: 2.5fr 1fr;
+	grid-template-rows: 1.5fr 1fr;
 	padding-bottom: 4rem;
 
 	#abschluss {
@@ -397,47 +399,14 @@ footer {
 		justify-content: center;
 		align-items: center;
 		/* border-bottom: 3px solid $secondaryColour; */
+		text-align: center;
+		padding: 0 5rem;
 
 		a {
 			font-size: 2.5rem;
 			text-transform: uppercase;
 		}
 	}
-	/* #kontakt {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		article {
-			padding: 1rem 3rem;
-			position: relative;
-			h4 {
-				font-size: 3rem;
-				rotate: -90deg;
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				transform: translate(50%);
-				text-align: start;
-			}
-			div {
-				width: 80%;
-
-				p {
-					display: flex;
-					justify-content: space-between;
-				}
-			}
-			&:first-of-type {
-				div {
-					display: flex;
-					flex-direction: column;
-					height: 100%;
-					p:last-of-type {
-						margin-top: auto;
-					}
-				}
-			}
-		}
-	} */
 }
 /* Zurück nach oben Pfeil */
 #topArrow {
@@ -456,12 +425,14 @@ footer {
 #hover {
 	display: flex;
 	/* grid-template-columns: repeat(4, 1fr); */
+	flex-wrap: nowrap;
 	gap: 0.5rem;
-	padding: 1rem 15rem;
-	width: calc(100% - 2rem);
+	padding: 1rem 5rem;
+	width: 100%;
 	justify-content: center;
 
-	&:hover > .card > .cardBorder {
+	&:hover > .card > .cardBorder,
+	&:focus > .card > .cardBorder {
 		opacity: 1;
 	}
 	.card {
@@ -471,9 +442,10 @@ footer {
 		background-color: rgba($hoverColour1, 0.1);
 		border-radius: 1rem;
 		position: relative;
-		aspect-ratio: 1/1;
-		width: 150px;
+		max-width: 150px;
+		max-height: 150px;
 		font-size: 4rem;
+		aspect-ratio: 1/1;
 
 		&:hover::before,
 		&:hover > .cardBorder {
@@ -520,6 +492,46 @@ footer {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+	}
+}
+/* ==========
+media queries 
+========== */
+/* Mobile */
+@media (max-width: 650px) {
+	header {
+		nav {
+			ul {
+				display: none;
+			}
+		}
+	}
+	#whoAmI {
+		top: -600%;
+		> div {
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			img {
+				/* display: none; */
+				width: 100px;
+				object-fit: contain;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	.projekte {
+		padding: 1.5rem 0.5rem;
+		.projekt {
+			max-width: 125px;
+		}
+	}
+	footer {
+		#hover {
+			.card {
+				font-size: 3rem;
+			}
 		}
 	}
 }
