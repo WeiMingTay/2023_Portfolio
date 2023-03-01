@@ -353,6 +353,7 @@ header #hero h3 {
 }
 .projekte .projekt a:last-of-type {
   z-index: 1;
+  color: #87ceeb;
 }
 .projekte .projekt:hover .codingKlammern::before, .projekte .projekt:hover .codingKlammern::after {
   visibility: visible;
