@@ -63,7 +63,7 @@ a {
 /* Pulsating Animation*/
 .pulsating {
 	animation-name: pulsating;
-	animation-duration: 3000ms;
+	animation-duration: 2500ms;
 	animation-iteration-count: infinite;
 }
 @keyframes pulsating {
@@ -71,7 +71,7 @@ a {
 		color: transparent;
 	}
 	50% {
-		color: $textColorDark;
+		color: $secondaryColour;
 	}
 	100% {
 		color: transparent;
@@ -554,7 +554,7 @@ media queries
 
 					align-items: center;
 					justify-content: center;
-					gap: .5rem;
+					gap: 1rem;
 					display: none;
 
 					p {
