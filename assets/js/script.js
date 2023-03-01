@@ -23,6 +23,9 @@ hamburger.addEventListener("click", () => {
 closeHam.addEventListener("click", () => {
 	navList.style.display="none"
 })
+navList.addEventListener("click", () => {
+	navList.style.display="none"
+})
 
 /* Wer bin ich */
 

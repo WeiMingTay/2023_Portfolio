@@ -45,7 +45,7 @@ a {
 /* Pulsating Animation*/
 .pulsating {
   animation-name: pulsating;
-  animation-duration: 3000ms;
+  animation-duration: 2500ms;
   animation-iteration-count: infinite;
 }
 
@@ -54,7 +54,7 @@ a {
     color: transparent;
   }
   50% {
-    color: #000;
+    color: #87ceeb;
   }
   100% {
     color: transparent;
@@ -488,7 +488,7 @@ media queries
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
     display: none;
   }
   header nav .container ul p {
