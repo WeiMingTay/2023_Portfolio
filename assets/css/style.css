@@ -146,6 +146,10 @@ header nav ul {
   justify-content: flex-end;
   gap: 3rem;
   margin: 0 2rem;
+  transition: all 250ms;
+}
+header nav ul p {
+  display: none;
 }
 header nav ul li {
   list-style: none;
@@ -170,6 +174,24 @@ header nav ul a::after {
 header nav ul a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+header nav .container #closeHamburger {
+  cursor: pointer;
+  font-size: 4rem;
+}
+header nav .container .hamburger {
+  width: 30px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  display: none;
+  cursor: pointer;
+}
+header nav .container .hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #333333;
 }
 header #hero {
   height: 90%;
@@ -454,8 +476,29 @@ media queries
 ========== */
 /* Mobile */
 @media (max-width: 700px) {
-  header nav ul {
+  header nav .container ul {
+    position: absolute;
+    height: 50vh;
+    width: 50vw;
+    top: 0;
+    bottom: 0;
+    right: -2rem;
+    background-color: #87ceeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     display: none;
+  }
+  header nav .container ul p {
+    display: block;
+  }
+  header nav .container ul li:first-of-type {
+    margin-top: 2rem;
+  }
+  header nav .container .hamburger {
+    display: flex;
   }
   #whoAmI {
     top: -600%;
@@ -485,6 +528,6 @@ media queries
     font-size: 2rem;
   }
   footer #hover .cardContent {
-    padding: 2rem;
+    padding: 0.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
