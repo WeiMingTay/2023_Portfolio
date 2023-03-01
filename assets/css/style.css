@@ -332,10 +332,11 @@ header #hero h3 {
      object-fit: cover;
   transition: all 250ms;
   z-index: 1;
+  border-radius: 2rem 2rem 0 0;
 }
 .projekte .projekt .imgContainer img:hover {
-  scale: 1.05;
-  rotate: 1deg;
+  scale: 0.95;
+  /* rotate: 1deg; */
 }
 .projekte .projekt div:last-of-type {
   display: flex;

@@ -367,10 +367,11 @@ header {
 				object-fit: cover;
 				transition: all 250ms;
 				z-index: 1;
+				border-radius: $projekteBorderRadius $projekteBorderRadius 0 0;
 
 				&:hover {
-					scale: 1.05;
-					rotate: 1deg;
+					scale: .95;
+					/* rotate: 1deg; */
 				}
 			}
 
