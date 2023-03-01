@@ -392,9 +392,11 @@ header {
 			margin: 1rem auto;
 			font-size: 1.5rem;
 			z-index: 1;
+			
 
 			&:last-of-type {
 				z-index: 1;
+				color: $secondaryColour;
 			}
 		}
 		&:hover .codingKlammern::before,
