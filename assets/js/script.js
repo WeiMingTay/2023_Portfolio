@@ -11,6 +11,19 @@ document.getElementById("hover").onmousemove = (e) => {
 	}
 };
 
+/* Hamburger Menu */
+
+const navList = document.getElementById("navUl")
+const hamburger = document.querySelector(".hamburger")
+const closeHam = document.getElementById("closeHamburger")
+
+hamburger.addEventListener("click", () => {
+	navList.style.display="flex"
+})
+closeHam.addEventListener("click", () => {
+	navList.style.display="none"
+})
+
 /* Wer bin ich */
 
 const weiMing = document.getElementById("weiMing");

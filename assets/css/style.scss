@@ -167,6 +167,11 @@ header {
 			justify-content: flex-end;
 			gap: 3rem;
 			margin: 0 2rem;
+			transition: all 250ms;
+			
+			p {
+				display: none;
+			}
 
 			li {
 				list-style: none;
@@ -192,6 +197,30 @@ header {
 				&:hover::after {
 					transform: scaleX(1);
 					transform-origin: left;
+				}
+			}
+		}
+		.container {
+			
+			#closeHamburger {
+				cursor: pointer;
+				font-size: 4rem;
+
+			}
+			
+
+			.hamburger {
+				width: 30px;
+				aspect-ratio: 1/1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				display: none;
+				cursor: pointer;
+				span {
+					width: 100%;
+					height: 3px;
+					background-color: $bgColourDark;
 				}
 			}
 		}
@@ -509,8 +538,35 @@ media queries
 @media (max-width: 700px) {
 	header {
 		nav {
-			ul {
-				display: none;
+			.container {
+
+				ul {
+					position: absolute;
+					height: 50vh;
+					width: 50vw;
+					top: 0;
+
+					bottom: 0;
+					right: -2rem;
+					background-color: $secondaryColour;
+					display: flex;
+					flex-direction: column;
+
+					align-items: center;
+					justify-content: center;
+					gap: .5rem;
+					display: none;
+
+					p {
+						display: block;
+					}
+					li:first-of-type {
+						margin-top: 2rem;
+					}
+				}
+				.hamburger {
+					display: flex;
+				}
 			}
 		}
 	}
@@ -541,7 +597,7 @@ media queries
 				font-size: 2rem;
 			}
 			.cardContent {
-padding: 2rem;
+				padding: .5rem;
 			}
 		}
 	}
