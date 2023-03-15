@@ -535,6 +535,13 @@ footer {
 			justify-content: center;
 			align-items: center;
 			padding: 3rem;
+
+			i {
+				transition: scale 500ms;
+			}
+		}
+		&:hover i {
+			scale: 1.5;
 		}
 	}
 }
