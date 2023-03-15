@@ -132,7 +132,7 @@ a {
 /* Header */
 header {
 	height: 100dvh;
-	width: 100dvw;
+	/* width: 100dvw; */
 	background-color: $primaryColour;
 
 	#logo {
@@ -424,7 +424,7 @@ header {
 footer {
 	background-color: $bgColourDark;
 	color: $textColorLight;
-	height: calc(100svh - 10vh);
+	height: 100dvh;
 	width: 100%;
 	/* display: grid;
 	grid-template-rows: 1.5fr 1fr; */
