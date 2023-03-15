@@ -480,6 +480,12 @@ footer #abschluss a {
   align-items: center;
   padding: 3rem;
 }
+#hover .card > .cardContent i {
+  transition: scale 500ms;
+}
+#hover .card:hover i {
+  scale: 1.5;
+}
 
 /* ==========
 media queries 
