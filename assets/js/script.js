@@ -13,16 +13,16 @@ document.getElementById("hover").onmousemove = (e) => {
 
 /* Hamburger Menu */
 
-const navList = document.getElementById("navUl")
-const hamburger = document.querySelector(".hamburger")
-const closeHam = document.getElementById("closeHamburger")
+const navList = document.getElementById("navUl");
+const hamburger = document.querySelector(".hamburger");
+const closeHam = document.getElementById("closeHamburger");
 
 hamburger.addEventListener("click", () => {
-	navList.style.display="flex"
-})
+	navList.style.display = "flex";
+});
 closeHam.addEventListener("click", () => {
-	navList.style.display="none"
-})
+	navList.style.display = "none";
+});
 /* navList.addEventListener("click", () => {
 	navList.style.display="none"
 }) */
@@ -33,8 +33,19 @@ const weiMing = document.getElementById("weiMing");
 const whoAmI = document.getElementById("whoAmI");
 
 weiMing.addEventListener("click", () => {
-	whoAmI.style.display="block"
-})
+	whoAmI.style.display = "block";
+});
 whoAmI.addEventListener("click", () => {
-	whoAmI.style.display="none"
-})
+	whoAmI.style.display = "none";
+});
+
+/* Lebenslauf */
+const lebenslaufLink = document.getElementById("lebenslaufLink");
+lebenslaufLink.addEventListener("mouseout", () => {
+	lebenslaufLink.innerHTML = "Wei Ming Tay";
+	lebenslaufLink.style.textDecoration="underline"
+});
+lebenslaufLink.addEventListener("mouseover", () => {
+	lebenslaufLink.innerHTML = "Lebenslauf";
+	lebenslaufLink.style.textDecoration="none"
+});
